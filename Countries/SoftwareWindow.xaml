@@ -1,0 +1,30 @@
+﻿<Window x:Class="Countries.SoftwareWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countries"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
+        mc:Ignorable="d"
+        Title="SoftwareWindow" Height="380" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="23*" />
+        </Grid.RowDefinitions>
+        <Grid Background="#0F0F2D" MouseDown="Grid_MouseDown">
+            <Label x:Name="lbl_Software" Content="Software" Foreground="White" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold"  Margin="5,0,300,0"/>
+        </Grid>
+        <Button x:Name="btn_exit" Click="btn_exit_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="25" Margin="468,0,8,5">
+            <Button.Background>
+                <ImageBrush ImageSource="/icons8_cancel_25px.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="worldimage" gif:AnimationBehavior.SourceUri="/gif-technologies-API.gif" Grid.Row="1" Margin="120,5,120,170" Source="/gif-technologies-API.gif"/>
+        <Label x:Name="lbl_Title" Content="software version" Foreground="Black" FontSize="22" FontFamily="Century Gothic" HorizontalAlignment="Center" FontWeight="Bold"  Margin="0,180,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_vertion" Content="Version: 1.1.2" Foreground="Black" FontSize="20" FontFamily="Century Gothic" FontWeight="Bold"  HorizontalAlignment="Center" Margin="0,220,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_update" Content="Latest upgrade: July 3, 2021" Foreground="Black" FontSize="22" FontFamily="Century Gothic" HorizontalAlignment="Center" FontWeight="Bold"  Margin="0,260,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_copy" Content="Copyright © 2021 all right reserved by Pedro Domingos" Foreground="Black" FontSize="18" FontFamily="Century Gothic" HorizontalAlignment="Center" FontWeight="Bold"  Margin="0,290,0,0" Grid.Row="1"/>
+        <ProgressBar x:Name="SoftwareProgress" HorizontalAlignment="Center" Height="29" Margin="0,320,0,0" Grid.Row="1" VerticalAlignment="Top" Width="500"/>
+    </Grid>
+</Window>

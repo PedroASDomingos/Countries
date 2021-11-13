@@ -1,0 +1,65 @@
+﻿<Window x:Class="Countries.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countries"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
+        mc:Ignorable="d"
+        Title="Countries of the world" Height="600" Width="800"  WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="#0F0F2D" MouseDown="Grid_MouseDown">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="189*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Button x:Name="btn_exit" Margin="745,0,0,0" Height="33" VerticalAlignment="Top" Click="btn_exit_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/icons8_cancel_25px.png" Stretch="None"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+
+
+        <Label x:Name="lbl_loading" Content="LOADING..." HorizontalAlignment="Left" Margin="12,155,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontSize="72" Foreground="White" Grid.Row="1"/>
+        <Image x:Name="worldimage" gif:AnimationBehavior.SourceUri="/Imagens/world.gif" Grid.Row="1" Margin="350,10,11,245" Source="/Imagens/world.gif"/>
+        <Label Content="Copyright © 2021 all right reserved by Pedro Domingos" HorizontalAlignment="Left" Margin="14,531,0,0" VerticalAlignment="Top" FontFamily="Century Gothic" FontWeight="Bold" Foreground="White" Grid.Row="1"/>
+        <Label x:Name="lbl_mensagem" Content="checking internet connection" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Century Gothic" FontWeight="Normal" Foreground="White" FontSize="20" Margin="0,477,0,0" Grid.Row="1"/>
+        <Button x:Name="btn_enter" Content="Start" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Click="btn_enter_Click" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" Foreground="White" Grid.Row="1" Visibility="Hidden">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="200" Height="50" CornerRadius="12" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <DockPanel x:Name="waitingPanel" LastChildFill="False" Margin="0,23,383,512" Grid.RowSpan="2">
+            <Image x:Name="img_Internet" Width="25" Height="25" Source="/Imagens/icons8_yellow_circle_25px.png"/>
+            <Label x:Name="lbl_Internet" Content="Waiting Internet connection..." Width="360" FontFamily="Century Gothic" FontSize="14" Foreground="White" Height="28"/>
+        </DockPanel>
+        <DockPanel x:Name="HaveConnectionPanel" LastChildFill="False" Margin="0,25,383,479" Grid.Row="1" >
+            <Image x:Name="img_Api" Width="25" Source="/Imagens/icons8_yellow_circle_25px.png" Height="25"/>
+            <Label x:Name="lbl_Api" Content="Waiting for API response..." Width="357" FontFamily="Century Gothic" FontSize="14" Foreground="White" Height="26" />
+        </DockPanel>
+        <DockPanel x:Name="HaveConnectionPanel_Copy" LastChildFill="False" Margin="0,58,383,439" Grid.Row="1" >
+            <Image x:Name="img_Data" Width="25" Source="/Imagens/icons8_yellow_circle_25px.png" Height="25"/>
+            <Label x:Name="lbl_Data" Content="Waiting for Data Base response..." Width="361" FontFamily="Century Gothic" FontSize="14" Foreground="White" Height="26" />
+        </DockPanel>
+        <ProgressBar x:Name="pgProgress" HorizontalAlignment="Center" Height="72" Margin="0,405,0,0" Grid.Row="1" VerticalAlignment="Top" Width="752"/>
+
+    </Grid>
+</Window>

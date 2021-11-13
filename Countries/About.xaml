@@ -1,0 +1,39 @@
+﻿<Window x:Name="AboutWindow" x:Class="Countries.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countries"
+        xmlns:gif="clr-namespace:XamlAnimatedGif;assembly=XamlAnimatedGif"
+        mc:Ignorable="d"
+        Title="About" Height="380" Width="500" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" >
+    <Grid >
+        <Grid.RowDefinitions >
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="23*" />
+        </Grid.RowDefinitions>
+        <Grid Background="#0F0F2D" MouseDown="Grid_MouseDown">
+            <Label x:Name="lbl_about" Content="About" Foreground="White" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold"  Margin="5,0,300,0"/>
+        </Grid>
+        <Button x:Name="btn_exit" Height="25" VerticalAlignment="Top" Click="btn_exit_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="25" Margin="460,0,0,0">
+            <Button.Background>
+                <ImageBrush ImageSource="/icons8_cancel_25px.png" Stretch="None"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="worldimage" gif:AnimationBehavior.SourceUri="/globe-gif-2.gif" Grid.Row="1" Margin="10,50,305,110" Source="/globe-gif-2.gif"/>
+        <TextBlock TextWrapping="WrapWithOverflow" Foreground="Black" TextAlignment="Justify" FontSize="15" FontFamily="Century Gothic" Margin="207,30,10,0" Grid.Row="1"> 
+            Software desenvolvido no ambito da formação da CINEL do Curso de Técnico Especialista em Tecnologias  e Programação de Sistemas de Informação, Módulo Programação de computadores - orientada a objectos</TextBlock>
+        <Label x:Name="lbl_Title" Content="Finalidade do projeto:" Foreground="Black" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold"  Margin="200,0,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_Title2" Content="Quem desenvolveu:" Foreground="Black" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold"  Margin="200,140,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_name" Content="Pedro Domingos" Foreground="Black" FontSize="18" FontFamily="Century Gothic" FontWeight="Bold" Margin="200,165,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_date" Content="Data Nascimento:" Foreground="Black" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Margin="200,190,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_dateN" Content="31 de Outubro de 1984" Foreground="Black" FontSize="14" FontFamily="Century Gothic" Margin="200,210,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_Contact" Content="Contacto:" Foreground="Black" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Margin="200,230,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_phonenumber" Content="+351 96 537 37 26" Foreground="Black" FontSize="14" FontFamily="Century Gothic" Margin="200,250,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_temail" Content="Email:" Foreground="Black" FontSize="14" FontFamily="Century Gothic" FontWeight="Bold" Margin="200,270,0,0" Grid.Row="1"/>
+        <Label x:Name="lbl_enail" Content="pedroasdomingos@gmail.com" Foreground="Black" FontSize="14" FontFamily="Century Gothic" Margin="200,290,0,0" Grid.Row="1"/>
+        <ProgressBar x:Name="AboutProgress" HorizontalAlignment="Center" Height="29" Margin="0,320,0,0" Grid.Row="1" VerticalAlignment="Top" Width="500"/>
+
+    </Grid>
+
+</Window>

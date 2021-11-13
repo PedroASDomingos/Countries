@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Imagens\icons8_globe_showing_americas.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="gif-technologies-API.gif" />
+    <None Remove="globe-gif-2.gif" />
+    <None Remove="icons8_cancel_25px.png" />
+    <None Remove="icons8_green_circle_25px.png" />
+    <None Remove="icons8_yellow_circle_25px.png" />
+    <None Remove="Imagens\icons8_yellow_circle_25px.png" />
+    <None Remove="Imagens\world.gif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="GMap.NET.Core" Version="2.0.2" />
+    <PackageReference Include="GMap.NET.WinPresentation" Version="2.0.2" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="7.24.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.114.3" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.2" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.114" />
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.0" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="gif-technologies-API.gif" />
+    <Resource Include="globe-gif-2.gif" />
+    <Resource Include="icons8_cancel_25px.png" />
+    <Resource Include="Imagens\icons8_green_circle_25px.png" />
+    <Resource Include="Imagens\icons8_yellow_circle_25px.png" />
+    <Resource Include="Imagens\world.gif" />
+  </ItemGroup>
+
+</Project>
